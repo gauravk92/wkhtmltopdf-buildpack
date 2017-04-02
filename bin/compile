@@ -26,6 +26,7 @@ else
   curl -L $WKHTMLTOPDF_URL -o $WKHTMLTOPDF_ZIP
   echo "-----> Decompressing"
   tar -xvf $WKHTMLTOPDF_ZIP
+  ls -la $CACHE_DIR
 fi
 
 echo "-----> Setting permissions"
