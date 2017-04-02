@@ -23,7 +23,7 @@ if [ -f $WKHTMLTOPDF_PKG ]; then
   echo "-----> Using wkhtmltopdf Debian package from cache"
 else
   echo "-----> Downloading wkhtmltopdf Debian package"
-  curl -L $WKHTMLTOPDF_URL -o $WKHTMLTOPDF_PKG
+  curl -L $WKHTMLTOPDF_URL -o $WKHTMLTOPDF_ZIP
   echo "-----> Decompressing"
   tar -xvf $WKHTMLTOPDF_ZIP
 fi
