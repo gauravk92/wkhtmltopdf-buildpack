@@ -25,7 +25,7 @@ else
   echo "-----> Downloading wkhtmltopdf Debian package"
   curl -L $WKHTMLTOPDF_URL -o $WKHTMLTOPDF_ZIP
   echo "-----> Decompressing"
-  tar -xvf $WKHTMLTOPDF_ZIP -C $WKHTMLTOPDF_BINARIES
+  tar -xvf $WKHTMLTOPDF_ZIP -C $CACHE_DIR
   ls -la $CACHE_DIR
 fi
 
