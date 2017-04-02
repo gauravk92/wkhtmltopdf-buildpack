@@ -13,7 +13,7 @@ mkdir -p $CACHE_DIR $BIN_PATH $TMP_PATH
 WKHTMLTOPDF_URL="http://download.gna.org/wkhtmltopdf/0.12/0.12.4/wkhtmltox-0.12.4_linux-generic-amd64.tar.xz"
 WKHTMLTOPDF_ZIP="$CACHE_DIR/wkhtmltopdf.tar.xz"
 WKHTMLTOPDF_PKG="$CACHE_DIR/wkhtmltopdf.deb"
-WKHTMLTOPDF_PATH="$TMP_PATH/wkhtmltopdf"
+WKHTMLTOPDF_PATH="$CACHE_DIR/wkhtmltopdf"
 WKHTMLTOPDF_BINARIES="$WKHTMLTOPDF_PATH/usr/local/bin"
 
 BIN_DIR=$(cd $(dirname $0); pwd)
@@ -27,9 +27,6 @@ else
   echo "-----> Decompressing"
   tar -xvf $WKHTMLTOPDF_ZIP
 fi
-
-echo "-----> Unpacking Debian package"
-dpkg -x $WKHTMLTOPDF_PKG $WKHTMLTOPDF_PATH
 
 echo "-----> Setting permissions"
 chmod +x $WKHTMLTOPDF_BINARIES/*
