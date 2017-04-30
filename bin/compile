@@ -16,14 +16,14 @@ mkdir -p $CACHE_DIR $BIN_PATH $TMP_PATH
 
 WKHTMLTOPDF_URL="https://downloads.wkhtmltopdf.org/0.12/0.12.4/wkhtmltox-0.12.4_linux-generic-amd64.tar.xz"
 WKHTMLTOPDF_ZIP="$CACHE_DIR/wkhtmltopdf.tar.xz"
-WKHTMLTOPDF_PKG="$CACHE_DIR/wkhtmltopdf.deb"
+# WKHTMLTOPDF_PKG="$CACHE_DIR/wkhtmltopdf.deb"
 WKHTMLTOPDF_PATH="$CACHE_DIR/wkhtmltox"
 WKHTMLTOPDF_BINARIES="$WKHTMLTOPDF_PATH"
 
 BIN_DIR=$(cd $(dirname $0); pwd)
 FONTS_DIR=$(cd "$BIN_DIR/../fonts"; pwd)
 
-if [ -f $WKHTMLTOPDF_PKG ]; then
+if [ -f $WKHTMLTOPDF_ZIP ]; then
   echo "-----> Using wkhtmltopdf Debian package from cache"
 else
   echo "-----> Downloading wkhtmltopdf Debian package"
@@ -32,9 +32,6 @@ else
   tar -xvf $WKHTMLTOPDF_ZIP -C $CACHE_DIR
   ls -la $CACHE_DIR
 fi
-
-echo "-----> Unpacking Debian package"
-dpkg -x $WKHTMLTOPDF_PKG $WKHTMLTOPDF_PATH
 
 echo "-----> Setting permissions"
 ls -al "$CACHE_DIR"
