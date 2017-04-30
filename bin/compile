@@ -34,8 +34,8 @@ else
 fi
 
 echo "-----> Setting permissions"
-ls -al $WKHTMLTOPDF_PATH
-ls -al $CACHE_DIR
+# ls -al $WKHTMLTOPDF_PATH
+ls -al "$CACHE_DIR"
 chmod +x $WKHTMLTOPDF_BINARIES/*
 
 echo "-----> Moving binaries to the right place"
