@@ -24,18 +24,18 @@ FONTS_DIR=$(cd "$BIN_DIR/../fonts"; pwd)
 
 if [ -f $WKHTMLTOPDF_ZIP ]; then
   echo "-----> Using wkhtmltopdf Zipfile from cache"
-  tar -xvf $WKHTMLTOPDF_ZIP -C $TMP_DIR
+  tar -xvf $WKHTMLTOPDF_ZIP -C $TMP_PATH
 else
   echo "-----> Downloading wkhtmltopdf Zipfile"
   curl -L $WKHTMLTOPDF_URL -o $WKHTMLTOPDF_ZIP
   echo "-----> Decompressing"
-  tar -xvf $WKHTMLTOPDF_ZIP -C $TMP_DIR
+  tar -xvf $WKHTMLTOPDF_ZIP -C $TMP_PATH
   ls -la $CACHE_DIR
 fi
 
 echo "-----> Setting permissions"
 ls -al "$CACHE_DIR"
-ls -al "$TMP_DIR"
+ls -al "$TMP_PATH"
 ls -al "$WKHTMLTOPDF_PATH"
 chmod +x $WKHTMLTOPDF_BINARIES/*
 
